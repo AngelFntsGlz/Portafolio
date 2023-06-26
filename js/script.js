@@ -28,7 +28,7 @@ window.onscroll = () => {
     }
   });
 
-  /* Navbar */
+  /* Navbar active*/
   let header = document.querySelector("header");
 
   header.classList.toggle("sticky", window.scrollY > 100);
@@ -45,14 +45,12 @@ ScrollReveal({
   delay: 200
 });
 
-ScrollReveal().reveal('.home-content, .heading, .about-content', { origin: 'top' });
-ScrollReveal().reveal('.home-img, .services-content, .skills-img, form', { origin: 'bottom' });
-ScrollReveal().reveal('.about-content, .portofolio-content', { origin: 'rigth' });
-ScrollReveal().reveal('.about-img, .formation-content', { origin: 'left' });
+ScrollReveal().reveal('.home-content, .heading, .home-content p, .about-content, .home-content h1, .about-img', { origin: 'top' });
+ScrollReveal().reveal('.home-img, .services-content, .portofolio-box, .contact form, .row-skills-container, .card', { origin: 'bottom' });
 
 /* Typed JS */
 consttyped = new Typed('.multiple-text', {
-  strings: ['Desarrollo Front End.', 'Marketing Digital.', 'Diseño Gráfico.', 'Desarrollo Cloud.', 'Diseño UX/UI.'],
+  strings: ['Desarrollo Front End.', 'Diseño Gráfico.', 'Desarrollo Cloud.', 'Diseño UX/UI.', 'Marketing Digital.'],
   typeSpeed: 100,
   backSpeed: 100,
   backDelay: 1000,

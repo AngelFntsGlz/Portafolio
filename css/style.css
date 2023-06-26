@@ -211,7 +211,9 @@ span {
 
 .skills-img-content {
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
   margin: 3rem 1.5rem 3rem 1.5rem;
 }
 
@@ -240,12 +242,15 @@ span {
 .skills-info,
 .skill-blob {
   display: grid;
+  justify-content: center;
   align-items: center;
+  margin: 3rem 1.5rem 3rem 1.5rem;
 }
 
 .skills-info {
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem 2rem;
+  justify-content: center;
   align-items: center;
 }
 
@@ -256,7 +261,7 @@ span {
   box-shadow: 0 0 1rem #4bc8ca;
   border-radius: 3rem;
   place-items: center;
-  margin-bottom: 1rem;
+  margin: 3rem 1.5rem 3rem 1.5rem;
 }
 
 .skill-blob img {
@@ -303,63 +308,43 @@ span {
 
 .formation-content {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+  gap: 2.5rem;
   margin: 3rem 1.5rem 3rem 1.5rem;
 }
 
-.card {
+.formation-content .card {
+  width: 300px;
+  height: 400px;
   background-color: var(--bg-color);
-  border-radius: 1rem;
+  border-radius: 3rem;
   box-shadow: 0 0 1rem #4bc8ca;
-  display: flex;
-  margin: 1.5rem;
   overflow: hidden;
-  width: 55rem;
-  height: 30rem;
+  text-align: center;
+  margin: 3rem 1.5rem 3rem 1.5rem;
+  transition: 0.5s ease;
+}
+.formation-content .card:hover {
+  transform: translateY(-15px);
+  border-radius: 3rem;
+  border-color: var(--main-color);
+  box-shadow: 0 0 1rem #4bc8ca;
 }
 
-.card h6,
-.card p {
-  opacity: 0.6;
-  letter-spacing: 0.1rem;
-  text-transform: uppercase;
+.formation-content .card img {
+  width: 290px;
+  height: 190px;
 }
 
-.card h2 {
-  letter-spacing: 0.1rem;
-  margin: 1rem 0;
-  color: var(--text-color);
+.formation-content .card h2 {
+  font-weight: bold;
 }
 
-.left {
-  color: var(--text-color);
-  padding: 2rem;
-  max-width: 10rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  letter-spacing: 0.1rem;
-}
-
-.background-left {
-  background: var(--second-bg-color);
-}
-
-.left img {
-  width: 12rem;
-}
-
-.right {
-  background: var(--bg-color);
-  color: var(--text-color);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  letter-spacing: 0.1rem;
+.formation-content .card p {
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  margin: 1.5rem 0.7rem 1.5rem 0.7rem;
 }
 
 /* Estilo Sección Portofolio */
@@ -569,11 +554,12 @@ span {
   justify-content: center;
   align-items: center;
   padding: 0.8rem;
-  background: var(--main-color);
+  background: #4bc8ca;
   border-radius: 0.8rem;
   transition: 0.5s ease;
 }
 .footer-icon a:hover {
+  background: var(--main-color);
   box-shadow: 0 0 1rem #4bc8ca;
 }
 
@@ -583,43 +569,32 @@ span {
 }
 
 /* BreakPoints */
+
 @media (max-width: 1200px) {
   html {
     font-size: 55%;
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1002px) {
   .header {
-    padding: 2rem 3%;
+    padding: 0.5rem 3%;
   }
 
   section {
     padding: 10rem 3% 2rem;
   }
 
-  .home {
+  .skills,
+  .formation,
+  .portofolio,
+  .services,
+  .contact {
     padding-bottom: 7rem;
   }
 
-  .about {
-    padding-bottom: 7rem;
-  }
-
-  .skills {
-    padding-bottom: 7rem;
-  }
-
-  .formation {
-    padding-bottom: 7rem;
-  }
-
-  .portofolio {
-    padding-bottom: 7rem;
-  }
-
-  .services {
-    padding-bottom: 7rem;
+  .contact {
+    min-height: auto;
   }
 
   .footer {
@@ -627,7 +602,7 @@ span {
   }
 }
 
-@media (max-width: 880px) {
+@media (max-width: 878px) {
   #menu-icon {
     display: block;
   }
@@ -658,12 +633,12 @@ span {
     flex-direction: column;
   }
 
-  .home-content h1 {
-    font-size: 5rem;
-  }
-
   .home-content h3 {
     font-size: 2.6rem;
+  }
+
+  .home-content h1 {
+    font-size: 5rem;
   }
 
   .home-img img {
@@ -675,83 +650,31 @@ span {
     flex-direction: column-reverse;
   }
 
-  .about h1 {
-    font-size: 5rem;
-  }
-
-  .about h3 {
-    font-size: 2.6rem;
-  }
-
   .about img {
     width: 70vw;
     margin-top: 4rem;
   }
 
-  .skills h2 {
-    margin-bottom: 3rem;
-  }
-
-  .skills-img-content {
-    display: grid;
-  }
-
-  .row-skills-container {
-    margin-bottom: 5rem;
-  }
-
-  .formation h2 {
-    margin-bottom: 3rem;
-  }
-
-  .formation-content {
-    display: grid;
-  }
-
-  .portofolio h2 {
+  .skills h2,
+  .formation h2,
+  .portofolio h2,
+  .services h2,
+  .contact h2 {
     margin-bottom: 3rem;
   }
 
   .portofolio-content {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .services h2 {
-    margin-bottom: 3rem;
-  }
-
-  .contact h2 {
-    margin-bottom: 3rem;
-  }
 }
 
-@media (max-width: 617px) {
-  .header {
-    padding: 1rem 1.5%;
-  }
-
+@media (max-width: 608px) {
   .portofolio-content {
-    grid-template-columns: 1fr;
-  }
-
-  .services-content {
-    display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
-@media (max-width: 575px) {
-  .footer {
-    display: grid;
-  }
-
-  .footer-icon {
-    text-align: right;
-    margin-top: 0.5rem;
-  }
-}
-
-@media (max-width: 500px) {
+@media (max-width: 580px) {
   html {
     font-size: 50%;
   }
@@ -759,18 +682,9 @@ span {
   .contact form .input-box input {
     width: 100%;
   }
-
-  .card {
-    width: auto;
-    height: auto;
-  }
-
-  .card a {
-    margin-top: 2rem;
-  }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 375) {
   .home-img img {
     width: 90vw;
   }
